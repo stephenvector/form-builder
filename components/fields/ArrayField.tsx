@@ -4,6 +4,6 @@ export type ArrayFieldProps = {
   field: ArrayFieldConfig;
 };
 
-const ArrayField: React.FC<ArrayFieldProps> = ({ field }: ArrayFieldProps) => {
+export default function ArrayField({ field }: ArrayFieldProps) {
   return <div>Array</div>;
-};
+}
