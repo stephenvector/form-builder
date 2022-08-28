@@ -1,10 +1,4 @@
 import type { User } from "firebase/auth";
-import type { ArrayFieldProps } from "@/components/fields/ArrayField";
-import type { CodeFieldProps } from "@/components/fields/CodeField";
-import type { ColorFieldProps } from "@/components/fields/ColorField";
-import type { SelectFieldProps } from "@/components/fields/SelectField";
-import type { TextareaFieldProps } from "@/components/fields/TextareaField";
-import type { TextFieldProps } from "@/components/fields/TextField";
 
 export type AuthContextValue = {
   user: User | null;
@@ -18,11 +12,13 @@ export enum FieldType {
   Code = "code",
   Color = "color",
   Select = "select",
+  UUID = "uuid",
 }
 
 export type FieldConfigBase = {
   uuid: string;
   label: string;
+  name: string;
 };
 
 export type TextFieldConfig = FieldConfigBase & {
@@ -41,8 +37,15 @@ export type CodeFieldConfig = FieldConfigBase & {
   type: FieldType.Code;
 };
 
+export type UUIDFieldConfig = FieldConfigBase & {
+  type: FieldType.UUID;
+};
+
 export type ArrayFieldConfig = FieldConfigBase & {
   type: FieldType.Array;
+  fields: FieldConfig[];
+  addItemText: string;
+  deleteItemText: string;
 };
 
 export type FieldOption = {
@@ -62,6 +65,7 @@ export type FieldConfig =
   | ColorFieldConfig
   | CodeFieldConfig
   | SelectFieldConfig
+  | UUIDFieldConfig
   | ArrayFieldConfig;
 
 export type FieldComponentConfig = Record<

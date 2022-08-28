@@ -1,5 +1,3 @@
-import styles from "./Label.module.css";
-
 type LabelProps = {
   htmlFor: string;
   label: string;
@@ -7,7 +5,7 @@ type LabelProps = {
 
 export default function Label({ htmlFor, label }: LabelProps) {
   return (
-    <label className={styles.label} htmlFor={htmlFor}>
+    <label className="label" htmlFor={htmlFor}>
       {label}
     </label>
   );

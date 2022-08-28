@@ -21,6 +21,7 @@
       "@/contexts": ["contexts/index"],
       "@/firebase": ["firebase/index"],
       "@/hooks": ["hooks/index"],
+      "@/lib/*": ["lib/*"],
       "@/types": ["types/index"],
       "@/utils": ["utils/index"]
     }
